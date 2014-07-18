@@ -74,3 +74,10 @@ chpwd_functions+=(__vte_osc7) # or replace __vte_ps1 with __vte_osc7 after updat
 
 #aliases
 alias cdp="cd -P"
+
+#functions
+settitle() {
+  add-zsh-hook -d precmd  omz_termsupport_precmd
+  add-zsh-hook -d preexec omz_termsupport_preexec
+  print -Pn "\e]0;$1\a"
+}
