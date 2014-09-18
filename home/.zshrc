@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="gallois"
+ZSH_THEME="murilasso"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -24,7 +24,7 @@ ZSH_THEME="gallois"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want to disable command autocorrection
 # DISABLE_CORRECTION="true"
@@ -54,7 +54,10 @@ source $ZSH/oh-my-zsh.sh
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
+# VIM forever!
 export EDITOR='vim'
+#bindkey -v
+#bindkey -M viins 'jj' vi-cmd-mode
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -62,8 +65,9 @@ export EDITOR='vim'
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+export PATH="$PATH:`ruby -rubygems -e 'puts Gem.user_dir'`/bin"
 
 # remember current directory when opening new tab
 chpwd_functions+=(__vte_osc7) # or replace __vte_ps1 with __vte_osc7 after updating vte to 0.34.5
