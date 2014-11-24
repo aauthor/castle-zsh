@@ -78,6 +78,9 @@ chpwd_functions+=(__vte_osc7) # or replace __vte_ps1 with __vte_osc7 after updat
 
 #aliases
 alias cdp="cd -P"
+alias rm='echo "This is not the command you are looking for."; false'
+alias t="trash"
+alias sudo="sudo -E"
 
 #functions
 settitle() {
