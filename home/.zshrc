@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="candy-kingdom"
+ZSH_THEME="robbyrussell"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -45,7 +45,7 @@ DISABLE_AUTO_TITLE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git mercurial ssh-agent battery)
+plugins=(vi-mode git mercurial history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -56,14 +56,16 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # VIM forever!
 export EDITOR='vim'
-#bindkey -v
-#bindkey -M viins 'jj' vi-cmd-mode
+bindkey -M viins 'jj' vi-cmd-mode
+bindkey '\e[A' history-substring-search-up
+bindkey '\e[B' history-substring-search-down
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
@@ -81,6 +83,8 @@ alias cdp="cd -P"
 alias rm='echo "This is not the command you are looking for."; false'
 alias t="trash"
 alias sudo="sudo -E"
+alias p8="ping -c 4 8.8.8.8"
+alias pgoo="ping -c 4 google.com"
 
 #functions
 settitle() {
