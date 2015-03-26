@@ -45,7 +45,7 @@ DISABLE_AUTO_TITLE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(vi-mode git mercurial history-substring-search)
+plugins=(vi-mode git mercurial history-substring-search ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -65,7 +65,7 @@ bindkey '\e[B' history-substring-search-down
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+#export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
@@ -84,10 +84,3 @@ alias rm='echo "This is not the command you are looking for."; false'
 alias t="trash"
 alias p8="ping -c 4 8.8.8.8"
 alias pgoo="ping -c 4 google.com"
-
-#functions
-settitle() {
-  add-zsh-hook -d precmd  omz_termsupport_precmd
-  add-zsh-hook -d preexec omz_termsupport_preexec
-  print -Pn "\e]0;$1\a"
-}
