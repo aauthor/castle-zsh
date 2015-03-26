@@ -82,7 +82,6 @@ chpwd_functions+=(__vte_osc7) # or replace __vte_ps1 with __vte_osc7 after updat
 alias cdp="cd -P"
 alias rm='echo "This is not the command you are looking for."; false'
 alias t="trash"
-alias sudo="sudo -E"
 alias p8="ping -c 4 8.8.8.8"
 alias pgoo="ping -c 4 google.com"
 
